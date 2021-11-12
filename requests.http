@@ -1,0 +1,28 @@
+## PRODUCER
+### Fires off a really eager message producer
+POST http://localhost:8080/producer
+Accept: application/json
+
+### Produces a single message
+POST http://localhost:8080/producer/single
+Accept: application/json
+
+## CONSUMER
+### Launches an eager consumer
+GET http://localhost:9090/consumer
+Accept: application/json
+
+### Launches a consumer that is really slow, but tries its best
+GET http://localhost:9090/consumer/slow
+Accept: application/json
+
+### Launches a consumer that is really slow, but doesnt care
+GET http://localhost:9090/consumer/latest
+Accept: application/json
+
+### Checking the Metrics
+###
+GET http://localhost:8080/actuator/prometheus
+
+###
+GET http://localhost:9090/actuator/prometheus
